@@ -26,7 +26,7 @@ Insights can guide marketing strategy adjustments, such as prioritizing promotio
 - Step 1 : Load data into SQL, and created some features or columns for better analysis.
 - Code for each feature:
   
-1) UPDATE demo_table3
+1)  UPDATE demo_table3
 SET UserType = 
     CASE
         -- If Financial Status is not 'paid', or Email contains 'test', or Paid At is NULL, or Total Revenue is 0
