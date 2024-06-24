@@ -35,7 +35,8 @@ SET UserType =
              Paid_at IS NULL OR
              Total = 0 THEN 'Test User'
         ELSE 'Regular User'
-    END;
+    END;```
+  
 
 
 2) UPDATE demo_table3
