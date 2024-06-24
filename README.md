@@ -26,7 +26,7 @@ Insights can guide marketing strategy adjustments, such as prioritizing promotio
 - Step 1 : Load data into SQL, and created some features or columns for better analysis.
 - Code for each feature:
   
-1)  sql
+-- 1. Update UserType based on various conditions
 UPDATE demo_table3
 SET UserType = 
     CASE
@@ -36,91 +36,65 @@ SET UserType =
              Total = 0 THEN 'Test User'
         ELSE 'Regular User'
     END;
-  
 
-
-2) UPDATE demo_table3
-   
+-- 2. Update OrderType based on Cart Value and Cart Quantity percentiles
+UPDATE demo_table3
 SET OrderType = 
     CASE
-        -- If Cart Value > 98 Percentile
         WHEN Total > (SELECT PERCENTILE_CONT(0.98) WITHIN GROUP (ORDER BY Total) FROM demo_table3) THEN 'Bulk Order'
-        -- If Cart Quantity > 98 Percentile
         WHEN quantity_per_order > (SELECT PERCENTILE_CONT(0.98) WITHIN GROUP (ORDER BY quantity_per_order) FROM demo_table3) THEN 'Bulk Order'
         ELSE 'Regular Order'
     END;
 
-3)
-  
-  WITH OrderCounts AS (
+-- 3. Update Retailer based on OrderNumber and OrderType
+WITH OrderCounts AS (
     SELECT email, paid_at, COUNT(DISTINCT id1) AS OrderNumber
     FROM demo_table3
     GROUP BY email, paid_at
 )
 UPDATE demo_table3
-
 SET Retailer = 
     CASE 
         WHEN oc.OrderNumber > 2 THEN 'Retail Order'
-        WHEN Ordertype = 'Bulk Order' THEN 'Retail Order'
+        WHEN OrderType = 'Bulk Order' THEN 'Retail Order'
         ELSE 'Non Retail Order'
     END
 FROM demo_table3
-JOIN OrderCounts oc ON demo_table3.email = oc.email AND  demo_table3.paid_at = oc.paid_date;
+JOIN OrderCounts oc ON demo_table3.email = oc.email AND demo_table3.paid_at = oc.paid_at;
 
-4) UPDATE demo_table3 
-
+-- 4. Update Discount_group based on Discount_Code
+UPDATE demo_table3
 SET Discount_group = 
-
     CASE 
+        WHEN Discount_Code LIKE '%Paytm%' THEN 'Paytm discount'
+        WHEN Discount_Code LIKE '%mpin%' THEN 'Magic Pin discount'
+        WHEN Discount_Code IN ('ITCstoreCash100', 'ITCStoreEK', 'SummerstoreCK10', 'itcstorecash100', 'itcstoreek', 'summerstoreck10', 'itcstoreck', 'itcstorebuyblast', 'itcstoreflash', 'essential', 'jan20') THEN 'Cashkaro discount'
+        WHEN Discount_Code IN ('Phpe', 'itcstorephpe', 'itcpp4', 'itcphpe25', 'itcphpe400') THEN 'Phonepay discount'
+        WHEN Discount_Code LIKE '%gpay%' THEN 'Gpay discount'
+        WHEN Discount_Code IN ('itcstorecs', 'itcstorecsapr') THEN 'Convosight'
+        ELSE NULL
+    END;
 
-        WHEN Discount_Code LIKE '%Paytm%' THEN 'Paytm discount' 
-
-        WHEN Discount_Code LIKE '%mpin%' THEN 'Magic Pin discount' 
-
-        WHEN Discount_Code IN ('ITCstoreCash100', 'ITCStoreEK', 'SummerstoreCK10', 'itcstorecash100', 'itcstoreek', 'summerstoreck10', 'itcstoreck', 'itcstorebuyblast', 'itcstoreflash', 'essential', 'jan20') THEN 'Cashkaro discount' 
-
-        WHEN Discount_Code IN ('Phpe', 'itcstorephpe', 'itcpp4', 'itcphpe25', 'itcphpe400') THEN 'Phonepay discount' 
-
-        WHEN Discount_Code LIKE '%gpay%' THEN 'Gpay discount' 
-
-        WHEN Discount_Code IN ('itcstorecs', 'itcstorecsapr') THEN 'Convosight' 
-
-        ELSE NULL 
-
-    END; 
-
-5) UPDATE demo_table3 
-
+-- 5. Update cart_buster_item based on Total value
+UPDATE demo_table3
 SET cart_buster_item =  
-
     CASE  
+        WHEN Total > 1500 THEN 'Cart_Buster_2'
+        WHEN Total >= 1000 AND Total <= 1499 THEN 'Cart_Buster_1'
+        ELSE 'No'
+    END;
 
-        WHEN Total > 1500 THEN 'Cart_Buster_2' 
-
-        WHEN Total >= 1000 AND Total <= 1499 THEN 'Cart_Buster_1' 
-
-        ELSE 'No' 
-
-    END; 
-
-6) UPDATE demo_table3 
-
+-- 6. Update InvalidOrder based on UserType and Discount_Amount
+UPDATE demo_table3
 SET InvalidOrder =  
-
     CASE 
+        WHEN UserType = 'Test User' THEN 'Yes'
+        WHEN Discount_Amount > 0.9 * Total THEN 'Yes'
+        ELSE 'No'
+    END;
 
-       
-        WHEN UserType = 'Test User' THEN 'Yes' 
-
-        WHEN Discount_Amount > 0.9 * Total THEN 'Yes' 
-
-       ELSE 'No' 
-
-    END; 
-
-7) UPDATE demo_table3
-   
+-- 7. Update Repeater based on the count of distinct orders per email
+UPDATE demo_table3 
 SET Repeater = 
     CASE 
         WHEN (SELECT COUNT(DISTINCT(order_id)) FROM demo_table3 GROUP BY email) > 1 THEN 'Yes'
