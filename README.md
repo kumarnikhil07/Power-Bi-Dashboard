@@ -53,6 +53,7 @@ SET OrderType =
     GROUP BY email, paid_at
 )
 UPDATE demo_table3
+
 SET Retailer = 
     CASE 
         WHEN oc.OrderNumber > 2 THEN 'Retail Order'
@@ -62,7 +63,7 @@ SET Retailer =
 FROM demo_table3
 JOIN OrderCounts oc ON demo_table3.email = oc.email AND  demo_table3.paid_at = oc.paid_date;
 
-4) UPDATE demo_table3 
+5) UPDATE demo_table3 
 
 SET Discount_group = 
 
