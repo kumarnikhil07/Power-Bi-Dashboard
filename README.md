@@ -38,6 +38,7 @@ SET UserType =
     END;***
 
 2) UPDATE demo_table3
+   
 SET OrderType = 
     CASE
         -- If Cart Value > 98 Percentile
@@ -47,7 +48,7 @@ SET OrderType =
         ELSE 'Regular Order'
     END;
 
-3) WITH OrderCounts AS (
+4) WITH OrderCounts AS (
     SELECT email, paid_at, COUNT(DISTINCT id1) AS OrderNumber
     FROM demo_table3
     GROUP BY email, paid_at
