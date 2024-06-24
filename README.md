@@ -123,20 +123,20 @@ SET Repeater =
   - This tab shows product insights, such as top product by quantity sold, selling of product with time etc.
   - Two Slicers have been used- year & month.
   - Screenshot: 
-    ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/d8d22de6-f79e-4858-bb1c-503d6f5b26fb)
+![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/17b3f956-74ea-4e2d-8c3a-c3c526ad746f)
 
   ## Order overview tab:
   - This tab shows Orders insights, such as number of Orders placed by different Discount Group, Number of Bulk Orders, Orders having less than or equal to ten items etc.
   - Four Slicers have been used- Year, Month, State and City.
   -  Screenshot:
-    ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/a675cd6b-7169-41e7-a5b7-a283e3255d51)
+![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/10ea8096-3ec3-4668-8496-4556ee45230c)
 
  
   ## Store engagement:
   - This tab shows Store insights, such as number of first time vs. Repeater Customers, Revenue Pattern etc. 
   - Two Slicers have been used- Year, Month.
   - Screenshot:
-    ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/0b8380b8-16cf-478e-bae1-7ce16fdbcf9a)
+![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/39ea3c8a-1d33-426a-bb57-f30129d98c86)
 
   
  
@@ -145,7 +145,7 @@ SET Repeater =
   - This tab shows marketing strategy used by the Company.
   - Two Slicers have been used- Year, Month.
   - Screenshot :
-    ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/2de5833a-bdb9-4479-b146-e4b39ce4f2a4)
+![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/c156d840-d9fe-4740-ab6a-1c858c928b51)
 
  ## Suggestions based on Important Insights: 
  1) Marketing :
