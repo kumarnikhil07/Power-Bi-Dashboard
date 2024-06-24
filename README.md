@@ -40,6 +40,7 @@ SET UserType =
     END;
 
 -- 2. Update OrderType based on Cart Value and Cart Quantity percentiles
+
 UPDATE demo_table3
 SET OrderType = 
     CASE
@@ -49,6 +50,7 @@ SET OrderType =
     END;
 
 -- 3. Update Retailer based on OrderNumber and OrderType
+
 WITH OrderCounts AS (
     SELECT email, paid_at, COUNT(DISTINCT id1) AS OrderNumber
     FROM demo_table3
@@ -65,6 +67,7 @@ FROM demo_table3
 JOIN OrderCounts oc ON demo_table3.email = oc.email AND demo_table3.paid_at = oc.paid_at;
 
 -- 4. Update Discount_group based on Discount_Code
+
 UPDATE demo_table3
 SET Discount_group = 
     CASE 
@@ -78,6 +81,7 @@ SET Discount_group =
     END;
 
 -- 5. Update cart_buster_item based on Total value
+
 UPDATE demo_table3
 SET cart_buster_item =  
     CASE  
@@ -87,6 +91,7 @@ SET cart_buster_item =
     END;
 
 -- 6. Update InvalidOrder based on UserType and Discount_Amount
+
 UPDATE demo_table3
 SET InvalidOrder =  
     CASE 
@@ -96,6 +101,7 @@ SET InvalidOrder =
     END;
 
 -- 7. Update Repeater based on the count of distinct orders per email
+
 UPDATE demo_table3 
 SET Repeater = 
     CASE 
