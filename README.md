@@ -25,6 +25,7 @@ Insights can guide marketing strategy adjustments, such as prioritizing promotio
 
 - Step 1 : Load data into SQL, and created some features or columns for better analysis.
 - Code for each feature:
+  
 -- 1. Update UserType based on various conditions
 UPDATE demo_table3
 SET UserType = 
