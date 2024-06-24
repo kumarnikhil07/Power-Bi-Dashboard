@@ -1,6 +1,6 @@
 # E-Store Performance Monitoring Dashboard(SQL and Power Bi)
 
-### Dashboard Link : https://app.powerbi.com/groups/me/reports/384d017e-e935-44dc-9e7d-1626c1a36de1/ReportSection
+### Dashboard Link : https://app.powerbi.com/groups/me/reports/23f394ae-f951-42b7-b50a-d6f8f4202e95/ReportSectionfe965657616459089be0?experience=power-bi
 
 ## Problem Statement
 
