@@ -1,4 +1,4 @@
-# E-Store Performance Monitoring Dashboard(SQL and Power Bi)
+# E-Store Performance Analytics Dashboard(SQL and Power Bi)
 
 ### Dashboard Link : https://app.powerbi.com/groups/me/reports/23f394ae-f951-42b7-b50a-d6f8f4202e95/ReportSectionfe965657616459089be0?experience=power-bi
 
@@ -6,24 +6,26 @@
 
 This project aims to closely monitor the performance of a recently inaugurated e-store, leveraging data-driven insights to make informed decisions that enhance customer acquisition, engagement, and ultimately drive sales for business growth.
 
-##Insights and Analysis
-This project focuses on the following key areas:
+## key areas:
 
-Evaluate Products and Brands Performance: Analyze the performance of various products and brands available on the e-store.
-Analyze Marketing Campaign Parameters: Evaluate the effectiveness of different marketing campaigns and assess e-store performance across different regions.
+1)Evaluate Products and Brands Performance: Analyze the performance of various products and brands available on the e-store.
+2)Analyze Marketing Campaign Parameters: Evaluate the effectiveness of different marketing campaigns and assess e-store performance across different regions.
 
-##Business Benefits
+## Expected Outcomes: 
+
+## Business Benefits
 The insights derived from this analysis offer several business benefits:
 
-Enhance Operational Efficiency:
+1)Enhance Operational Efficiency:
 Analyzing performance metrics helps in managing store inventories, products, and orders more effectively.
-Decision Making:
+
+2)Decision Making:
 In-depth analysis provides valuable insights for making informed decisions, such as identifying ideal locations for expansion.
 Insights can guide marketing strategy adjustments, such as prioritizing promotions for top-selling products to attract more customers.
 
 ### Steps followed 
 
-- Step 1 : Load data into SQL, and created some features or columns for better analysis.
+- Step 1 : The Datasets- Order, Marketing and Products. Loaded datasets into SQL, and created some features or columns(Such as Order Type, User Type, Discout Groups etc.) for better analysis.
 - Code for each feature:
   
 -- 1. Update UserType based on various conditions
@@ -101,19 +103,15 @@ SET Repeater =
         ELSE 'No'
     END;
 
-
-
-
-
-  
 - Step 2 : Open power query editor & in view tab under Data preview section, check "column distribution", "column quality" & "column profile" options.
-- Step 3 : Also since by default, profile will be opened only for 1000 rows so you need to select "column profiling based on entire dataset".
+- Step 3 : Also since by default, profile will be opened only for 1000 rows so selected "column profiling based on entire dataset".
 - Step 4 : It was observed that in none of the columns errors & empty values were present.
-- Step 5 : Calculated some measures like avg order value, avg quantity per order etc for better analysis. Exa-
-  Measure=sum(Master_Table_tagging[Quantity_per_order])/DISTINCTCOUNT(Master_Table_tagging[id]) 
-- Similarly created  other measures.
+- Step 5 : Calculated some measures like avg order value, avg quantity per order etc for better analysis.
+  Exa-
+  Measure1=sum(Master_Table_tagging[Quantity_per_order])/DISTINCTCOUNT(Master_Table_tagging[id]) 
+  Similarly created  other measures.
 - Step 6 : In the report view, under the view tab, theme was selected.
-- Step 7 : Since the data contains various features such as different Products and Brands, selected various visuals present in power bi, like waterfall, column, bar chart etc.
+- Step 7 : Since the data contains various features such as different Products and Brands etc., selected various visuals present in power bi, like waterfall, column, bar chart etc.
 - Step 8 : Visual filters (Slicers) were added for four fields named "Year", "Month", "State" & "City".
 - Step 9 : Ten card visuals were added to the canvas, representing average avg order value, total discount, total number of Orders, avg quantity per order etc.
 - Step 10 : Tool tips was used to show number of Customer per state and city together. 
