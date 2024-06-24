@@ -167,7 +167,7 @@ SET Repeater =
 
 
 
- ## Suggestions based on Important Insights: 
+ ## Suggestions based on Insights: 
  1) Marketing :
 - Google, Deals102, and Facebook are successful UTM sources, while CPC and Affiliate are effective mediums in Marketing. In Order to achieve more ROI, marketing activities should be intensified in festive season.
 
