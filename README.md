@@ -119,12 +119,13 @@ SET InvalidOrder =
 
     END; 
 
-7) update demo_tble3
+7) UPDATE demo_table3
    
-set Repeater = 
-case when (select count(distinct(order_id)) from demo_taable3 group by email) > 1 then 'Yes'
-else 'No'
-end; 
+SET Repeater = 
+    CASE 
+        WHEN (SELECT COUNT(DISTINCT(order_id)) FROM demo_table3 GROUP BY email) > 1 THEN 'Yes'
+        ELSE 'No'
+    END;
 
 
 
