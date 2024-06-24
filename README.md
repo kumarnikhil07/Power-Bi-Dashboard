@@ -27,6 +27,8 @@ Insights can guide marketing strategy adjustments, such as prioritizing promotio
 - Code for each feature:
   
 -- 1. Update UserType based on various conditions
+
+
 UPDATE demo_table3
 SET UserType = 
     CASE
