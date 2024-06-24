@@ -9,6 +9,7 @@ This project aims to closely monitor the performance of a recently inaugurated e
 ## key areas:
 
 1)Evaluate Products and Brands Performance: Analyze the performance of various products and brands available on the e-store.
+
 2)Analyze Marketing Campaign Parameters: Evaluate the effectiveness of different marketing campaigns and assess e-store performance across different regions.
 
 ## Expected Outcomes: 
