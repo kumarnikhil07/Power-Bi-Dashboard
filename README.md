@@ -14,7 +14,6 @@ This project aims to closely monitor the performance of a recently inaugurated e
 
 ## Expected Outcomes: 
 
-## Business Benefits
 The insights derived from this analysis offer several business benefits:
 
 1)Enhance Operational Efficiency:
@@ -145,6 +144,28 @@ SET Repeater =
   - Two Slicers have been used- Year, Month.
   - Screenshot :
 ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/c156d840-d9fe-4740-ab6a-1c858c928b51)
+
+ ## Important Insigths: 
+ 1) Performance of Brands and Products:
+    ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/6d94e9c0-ef29-4e0b-9239-c62b83aafbd2)
+
+2) Important Trends(Indicating Store Performance over time)
+![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/f3b534d6-df48-4203-9fd7-4a67f77c80e9)
+
+![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/44ae8bb6-de90-4fc3-9603-43856d1e22fa)
+
+3) Marketing :
+   ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/29244aa8-cbc5-4ebe-8f34-fdfed03786a9)
+   
+4) Other important insights:
+   ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/8af7ea85-1e21-42ba-95a9-a4bf878cdb4a)
+
+   ![image](https://github.com/nikhil9325/Power-Bi-Dashboard/assets/131294221/f0d225de-a3eb-4523-931b-dcc018b60e0f)
+
+  
+
+
+
 
  ## Suggestions based on Important Insights: 
  1) Marketing :
