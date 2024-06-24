@@ -48,7 +48,9 @@ SET OrderType =
         ELSE 'Regular Order'
     END;
 
-4) WITH OrderCounts AS (
+4)
+  
+  WITH OrderCounts AS (
     SELECT email, paid_at, COUNT(DISTINCT id1) AS OrderNumber
     FROM demo_table3
     GROUP BY email, paid_at
