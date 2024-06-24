@@ -26,7 +26,7 @@ Insights can guide marketing strategy adjustments, such as prioritizing promotio
 - Step 1 : Load data into SQL, and created some features or columns for better analysis.
 - Code for each feature:
   
-1)  ```sql
+1)  sql
 UPDATE demo_table3
 SET UserType = 
     CASE
@@ -35,7 +35,7 @@ SET UserType =
              Paid_at IS NULL OR
              Total = 0 THEN 'Test User'
         ELSE 'Regular User'
-    END;```
+    END;
   
 
 
@@ -50,7 +50,7 @@ SET OrderType =
         ELSE 'Regular Order'
     END;
 
-4)
+3)
   
   WITH OrderCounts AS (
     SELECT email, paid_at, COUNT(DISTINCT id1) AS OrderNumber
@@ -68,7 +68,7 @@ SET Retailer =
 FROM demo_table3
 JOIN OrderCounts oc ON demo_table3.email = oc.email AND  demo_table3.paid_at = oc.paid_date;
 
-5) UPDATE demo_table3 
+4) UPDATE demo_table3 
 
 SET Discount_group = 
 
